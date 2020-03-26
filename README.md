@@ -13,7 +13,7 @@ All the process regarding the second model the RNN classifier with 87% accuracy 
 
 All the models saved are in the ./model directory 
 
-All the training data, testing data, data after cleaning, and the submissions are in the ./data structure
+All the training data, testing data, data after cleaning, and the submissions are in the ./data directory
 
 
 ## Submission
