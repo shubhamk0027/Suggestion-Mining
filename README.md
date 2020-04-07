@@ -2,30 +2,29 @@ This repository contains the codes and Submission for SemEval 2019 Task 9 - SubT
 
 ## Details of the directory structure and file:
 
-Various models have been tried on first using the decison tree and then using the rnn and cnn classifier.
-
-First model is build using the XGBoost decision tree, with 99% accuracy!
-1. Data Cleaning Process is shown in the XgBoost1-DataCleaning.ipynb
-2. And the word2Vector representation of the cleaned data is in the XgBoost2-WordVecEmbedding.ipynb
-3. And the XGBoost classifier is in the XgBoost3-Classifier.ipynb file.
-
-All the models saved are in the ./model directory 
-All the training data, testing data, data after cleaning, and temporary data used are in the ./Data Directory
+1. The data cleaning process is shown with comments in the Data_Pre_Processing.ipynb file
+2. Three word representations are used for encoding the model- Fast Text, Word2Vec and Glove. For the three representations a sequence generator is made to produce the final sequences that will be the input to different model.
+3. Differenet models (CNN,RNN,with/without Attention) are then tested on these sequence generator. And the results are summarised here.
+4. CNN models using the BERT embeddings are also built and tested.  
+5. ./Data directory contains the temporary data being saved and load by the differnt models. 
+5. ./models directory contains the saved models for further use. 
+6. We also tried improving the model further by more cleaning and handling the data imbalance as shown in the SequenceGeneratorFastTextSMOTE.ipynb file
+ and tested in on CNN FastText with attention and CNN FastText without attention, but there was no improvment so we avoided handling data imbalance.
 
 ## Summary:
 
 | Model Type    | Word Embedding| Attention      | Testing Accuracy      | F1 Score      |
 | :---:         | :-:           | :-:            |:-:                    |:-:            |
-| LSTM          | Word2Vec      | No             |   82.94%              |76.57%         |
-| LSTM          | Word2Vec      | Yes            |   85.30%              |82.63%         |
-| LSTM          | FastText      | No             |   77.70%              |76.70%         |
-| LSTM          | FastText      | Yes            |   79.22%              |79.40%         |
+| LSTM          | Word2Vec      | No             |   77.20%              |75.14%         |
+| LSTM          | Word2Vec      | Yes            |   76.01%              |73.21%         |
+| LSTM          | FastText      | No             |   77.87%              |77.76%         |
+| LSTM          | FastText      | Yes            |   77.86%              |75.84%         |
 | LSTM          | Glove         | No             |   78.21%              |76.16%         |
 | LSTM          | Glove         | Yes            |   77.20%              |74.86%         |
-| CNN           | Word2Vec      | No             |   92.91%              |91.73%         |
-| CNN           | Word2Vec      | Yes            |   93.75%              |92.59%         |
-| CNN           | FastText      | No             |   78.21%              |76.92%         |
-| CNN           | FastText      | Yes            |   81.08%              |80.89%         |
-| XGBoost       | Word2Vec      | No             |   99.83%              |99.83%         |
+| CNN           | Word2Vec      | No             |   80.07%              |79.08%         |
+| CNN           | Word2Vec      | Yes            |   82.09%              |82.21%         |
+| CNN           | FastText      | No             |   80.74%              |79.79%         |
+| CNN           |FastText(SMOTE)| Yes            |   77.53%              |77.42%         |
+| CNN           | FastText      | Yes            |   80.24%              |79.79%         |
 | BERT          | -             | No             |   80.91%              |80.62%         |
 | BERT          | -             | Yes            |   82.60%              |82.64%         |
