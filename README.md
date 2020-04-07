@@ -3,10 +3,10 @@ This repository contains the codes and Submission for SemEval 2019 Task 9 - SubT
 ## Details of the directory structure and file:
 
 1. The data cleaning process is shown with comments in the Data_Pre_Processing.ipynb file
-2. Three word representations are used for encoding the model- Fast Text, Word2Vec and Glove. For the three representations a sequence generator is made to produce the final sequences that will be the input to different model.
-3. Differenet models (CNN,RNN,with/without Attention) are then tested on these sequence generator. And the results are summarised here.
-4. CNN models using the BERT embeddings are also built and tested.  
-5. ./Data directory contains the temporary data being saved and load by the differnt models. 
+2. Three word representations are used for encoding the model- Fast Text, Word2Vec and Glove. For the three representations a sequence generator is made to produce the final sequences that will be the input to different models.
+3. Differenet models (CNN,RNN,with/without Attention) are then tested on these sequence generators. And the results are summarised here.
+4. CNN models with the BERT embeddings are also tested.  
+5. ./Data directory contains the temporary data being saved and load by the different models. 
 5. ./models directory contains the saved models for further use. 
 6. We also tried improving the model further by more cleaning and handling the data imbalance as shown in the SequenceGeneratorFastTextSMOTE.ipynb file
  and tested in on CNN FastText with attention and CNN FastText without attention, but there was no improvment so we avoided handling data imbalance.
